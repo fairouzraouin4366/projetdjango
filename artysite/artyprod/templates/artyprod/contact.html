@@ -1,0 +1,167 @@
+{% extends 'artyprod/base.html' %}
+
+{% block content %}
+
+  
+    <section id="contact" class="contact">
+        <div class="container position-relative" data-aos="fade-up">
+  
+          <div class="row gy-4 d-flex justify-content-end">
+  
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+  
+              <div class="info-item d-flex">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h4>Position:</h4>
+                  <p>Route Mahdia km 2.5 </p>
+                </div>
+              </div><!-- End Info Item -->
+  
+              <div class="info-item d-flex">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h4>Email:</h4>
+                  <p>artysitesoc4442@gmail.com
+                  </p>
+                </div>
+              </div><!-- End Info Item -->
+  
+              <div class="info-item d-flex">
+                <i class="bi bi-phone flex-shrink-0"></i>
+                <div>
+                  <h4>Numéro:</h4>
+                  <p>+216 22 245 289</p>
+                </div>
+              </div><!-- End Info Item -->
+  
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+
+                <form action="{% url 'contact' %}" method="post" role="form" class="php-email-form" >
+                    {% csrf_token %}
+                    <div class="row">
+                    <div class="col-md-6 form-group">
+                      
+                      <input type="name" name="name" class="form-control" id="name" placeholder="Nom" required>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                    </div>
+                 
+                  <div>
+                    <input type="text" name="subject" placeholder="Subject" required id="text"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </div>
+                <input type="text" name="message" placeholder="Message" required id="text"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </div>
+                 
+                  <div class="text-center"><button style=" background-color: rgb(60, 101, 190)"  type="submit">Envoyer</button></div>
+                </div>
+                </form>
+    
+
+                
+
+
+
+              </div>
+
+              </div>  
+       
+             
+              </div>
+
+          
+
+                <style>form {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 600px;
+                    margin: auto;
+                    padding: 20px;
+                    background-color: #f2f2f2;
+                    border-radius: 5px;
+                    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+                    }
+                    
+                    form label {
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    }
+                    
+                    form input[type="text"],
+                    form input[type="email"],
+                    form textarea {
+                    padding: 10px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #fff;
+                    margin-bottom: 20px;
+                    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+                    font-size: 16px;
+                    }
+                    
+                    form input[type="submit"] {
+                    background-color: #4CAF50;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    }
+                    
+                    form input[type="submit"]:hover {
+                    background-color: #3e8e41;
+                    }
+                    
+                    .contact {
+                    background-color: #f8f9fa;
+                    padding: 60px 0;
+                    }
+                    
+                    .info-item {
+                    background-color: #fff;
+                    border-radius: 10px;
+                    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+                    padding: 20px;
+                    margin-bottom: 20px;
+                    }
+                    
+                    .info-item i {
+                    font-size: 24px;
+                    color: #4e73df;
+                    margin-right: 10px;
+                    }
+                    
+                    .info-item h4 {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    }
+                    
+                    .info-item p {
+                    font-size: 16px;
+                    }
+                    
+                    footer-info {
+                    margin-top: 30px;
+                    }
+                    
+                    .social-links a {
+                    font-size: 24px;
+                    margin-right: 10px;
+                    color: #4e73df;
+                    }
+                    
+                    .social-links a:hover {
+                    color: #4CAF50;
+                    }
+                   </style>
+
+
+
+{% endblock %}

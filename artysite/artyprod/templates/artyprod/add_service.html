@@ -1,0 +1,14 @@
+{% extends 'ArtyProd/base.html' %}
+{% block content %}
+<div class="card" style="width: 500px;margin: 10px; margin-left: 400px;" >
+    <div class="card-body">
+     
+<div class="col-md-12 text-center">
+<h2>Ajouter un service  </h2>
+</div>
+<form method='POST' class="post-form" style="margin-left: 40px;" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="sumit" class="btn btn-primary">Enregistrer</button>
+</form></div></div>
+{% endblock %}

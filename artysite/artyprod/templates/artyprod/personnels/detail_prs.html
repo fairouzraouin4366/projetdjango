@@ -1,0 +1,26 @@
+{% extends 'ArtyProd/base.html' %}
+{% block title %} {{personnel.libellé}} {% endblock %}
+
+{% block content %}
+
+
+  <div class="card" style="width: 400px;margin: 10px; margin-left: 450px;" >
+   <div class="card-body">
+       <h5 class="card-title">Personnel</h5>
+       <hr class="dropdown-divider">
+       <img src="{{ personnel.photoPrs.url }}" alt="{{ personnel.nom }}" style="width: 300px; height: 350px; padding: 5px;">
+       <hr class="dropdown-divider">
+        <p class="card-text">Nom: <b>{{personnel.nom}}</b></p>
+       <p class="card-text">Prenom: <b>{{personnel.prenom}}</b></p>
+       <p class="card-text">Date Naissance: <b>{{personnel.date_naissance}}</b></p>
+       <a href="{{ personnel.linkedln}}">lien linkedln: </a><br>
+       {% if personnel.cvPrs %}
+       <img  src="{{ personnel.cvPrs.url }}"  style="width: 350px; height: 400px; padding: 5px;">
+       {% endif %}
+              <a href="{% url 'TtPersonnel' %}" class="btn btn-secondary">Retour au list personnels</a>
+   </div>
+</div>
+{% endblock %}
+
+
+

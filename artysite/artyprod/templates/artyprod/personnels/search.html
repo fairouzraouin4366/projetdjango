@@ -1,0 +1,16 @@
+{% extends 'artyprod/base.html' %}
+
+{% block content %}
+  {% if query %}
+    <p>Résultats de recherche pour "{{ query }}" :</p>
+    {% if personnels %}
+      <ul>
+        {% for personnel in personnels %}
+          <li><a href="{% url 'detail_personnel' personnel.id %}">{{ personnel.type }}</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Aucun personnel trouvé pour "{{ query }}"</p>
+    {% endif %}
+  {% endif %}
+{% endblock %}

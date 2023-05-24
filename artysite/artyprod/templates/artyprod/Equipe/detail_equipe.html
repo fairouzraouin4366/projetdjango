@@ -1,0 +1,18 @@
+{% extends 'ArtyProd/base.html' %}
+
+{% block content %}
+<div class="card" style="width: 500px;margin: 10px; margin-left: 400px;" >
+  <div class="card-body">
+      <h5 class="card-title">Membres Equipe : {{ equipe.nom }}</h5>
+      <hr class="dropdown-divider">
+      <img src="/media/media/team.jpg" style="width: 100%;">
+      <p class="card-text">Nom et prénom:</p> <!-- Moved the closing tag -->
+      <div style="padding-left: 20px;">
+        {% for personnel in equipe.personnels.all %}
+          <p><b>{{ personnel.nom }} {{ personnel.prenom }}</b></p>
+        {% endfor %}
+      </div>
+      <a href="{% url 'equipes' %}" class="btn btn-primary">Retour au liste des équipes</a> <!-- Corrected the spelling of 'liste' -->
+    </div>
+  </div>
+{% endblock %}
